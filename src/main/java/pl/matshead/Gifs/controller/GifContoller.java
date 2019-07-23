@@ -8,5 +8,6 @@ public class GifContoller {
     @GetMapping("/")
     public String home(){
         return "home";
+        //
     }
 }
