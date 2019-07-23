@@ -44,8 +44,8 @@
         </div>
     </div>
     <div class="gifs container">
-        <div class="row">
-            <h1>Miejsce na wyświetlanie gifów:)</h1>
+        <div th:each="path : ${paths}" class="row">
+            <img th:attr="src=@{|/gifs/${path.getName()}.gif|}" />
         </div>
     </div>
 
