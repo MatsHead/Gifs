@@ -43,10 +43,9 @@
         </div>
     </div>
 </div>
-<div class="gifs container">
-    <div class="chip" th:text="${category.name}">category name</div>
-    <div class="row">
-        <h1>Miejsce na wyświetlenie gifów</h1>
+<div class="gifs container col ">
+    <div th:each="path : ${paths}" class="row">
+        <img th:attr="src=@{|/gifs/${path.getName()}.gif|}" />
     </div>
 </div>
 

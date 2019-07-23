@@ -8,6 +8,10 @@ public class Gif {
     private Boolean favorite;
     private String categoryId;
 
+    public String getCategoryId() {
+        return categoryId;
+    }
+
     public Gif(String name, Boolean favorite, String categoryId) {
         this.name = name;
         this.favorite = favorite;
