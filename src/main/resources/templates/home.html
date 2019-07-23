@@ -44,13 +44,8 @@
         </div>
     </div>
     <div class="gifs container">
-        <div class="row">
-            <img th:src="@{/gifs/android-explosion.gif}"/>
-            <img th:src="@{/gifs/ben-and-mike.gif}"/>
-            <img th:src="@{/gifs/book-dominos.gif}"/>
-            <img th:src="@{/gifs/compiler-bot.gif}"/>
-            <img th:src="@{/gifs/cowboy-coder.gif}"/>
-            <img th:src="@{/gifs/infinite-andrew.gif}"/>
+        <div th:each="path : ${paths}" class="row">
+            <img th:attr="src=@{|/gifs/${path}.gif|}" />
         </div>
     </div>
 
