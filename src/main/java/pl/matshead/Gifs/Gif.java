@@ -18,16 +18,6 @@ public class Gif {
         this.categoryId = categoryId;
     }
 
-    public static List<Gif> getGifs() {
-        List<Gif> gifs = new ArrayList<>();
-        gifs.add(new Gif("android-explosion", false, "1"));
-        gifs.add(new Gif("ben-and-mike", true, "2"));
-        gifs.add(new Gif("compiler-bot", false, "2"));
-        gifs.add(new Gif("cowboy-coder", false, "3"));
-        gifs.add(new Gif("infinite-andrew", true, "3"));
-        return gifs;
-    }
-
     public String getName() {
         return name;
     }

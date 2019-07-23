@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import pl.matshead.Gifs.Gif;
+import pl.matshead.Gifs.SampleData.GifSampleData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +14,8 @@ import java.util.stream.Collectors;
 public class FavoritesController {
     @GetMapping("/favorites")
     public String getFavorites(ModelMap modelMap){
-        List<Gif> newGifList = Gif.getGifs().stream().
-                filter(s->s.getFavorite()==true).
-                collect(Collectors.toCollection(ArrayList::new));
-        modelMap.put("paths", newGifList);
+        GifSampleData gifSampleData = new GifSampleData();
+        modelMap.put("paths", gifSampleData.getFavorites());
         return "favorites";
     }
 }

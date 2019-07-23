@@ -45,7 +45,7 @@
     </div>
     <div class="gifs container">
         <div th:each="path : ${paths}" class="col s12 l4">
-            <img th:attr="src=@{|/gifs/${path.getName()}.gif|}" />
+            <a th:href="@{'/gif/' + ${path.getName()}}" ><img th:attr="src=@{|/gifs/${path.getName()}.gif|}" /></a>
         </div>
     </div>
 
