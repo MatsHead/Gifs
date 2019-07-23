@@ -13,8 +13,7 @@ import java.util.stream.Collectors;
 public class FavoritesController {
     @GetMapping("/favorites")
     public String getFavorites(ModelMap modelMap){
-        Gif gif = new Gif();
-        List<Gif> newGifList = gif.getGifs().stream().
+        List<Gif> newGifList = Gif.getGifs().stream().
                 filter(s->s.getFavorite()==true).
                 collect(Collectors.toCollection(ArrayList::new));
         modelMap.put("paths", newGifList);
