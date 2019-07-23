@@ -10,8 +10,8 @@ import pl.matshead.Gifs.Gif;
 public class GifContoller {
     @GetMapping("/")
     public String home(ModelMap modelMap){
-        modelMap.put("paths", Gif.getGifs());
+        Gif gif = new Gif();
+        modelMap.put("paths", gif.getGifs());
         return "home";
     }
-
 }

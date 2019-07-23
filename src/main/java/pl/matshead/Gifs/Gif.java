@@ -6,14 +6,14 @@ import java.util.List;
 public class Gif {
     private String name;
     private Boolean favorite;
-    private static List<Gif> gifs = new ArrayList<>();
+    private  List<Gif> gifs;
 
-    public static List<Gif> getGifs() {
-        gifs.add(new Gif("android-explosion", false));
-        gifs.add(new Gif("ben-and-mike", true));
-        gifs.add(new Gif("compiler-bot", false));
-        gifs.add(new Gif("cowboy-coder", false));
-        gifs.add(new Gif("infinite-andrew", true));
+    public List<Gif> getGifs() {
+        this.gifs.add(new Gif("android-explosion", false));
+        this.gifs.add(new Gif("ben-and-mike", true));
+        this.gifs.add(new Gif("compiler-bot", false));
+        this.gifs.add(new Gif("cowboy-coder", false));
+        this.gifs.add(new Gif("infinite-andrew", true));
         return gifs;
     }
 
@@ -36,5 +36,8 @@ public class Gif {
     public Gif(String name, Boolean favorite) {
         this.name = name;
         this.favorite = favorite;
+    }
+    public Gif(){
+        this.gifs = new ArrayList<>();
     }
 }
