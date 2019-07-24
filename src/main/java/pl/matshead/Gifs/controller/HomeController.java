@@ -20,19 +20,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(@RequestParam(required = false) String q, ModelMap modelMap){
-        if (q != null) {
-            List<Gif> paths = new ArrayList<>();
-            Gif gif = Gif.getGifByName(q, gifRepository.getGifs());
-            if (gif != null) {
-                paths.add(gif);
-                modelMap.put("paths", paths);
-            } else {
-                modelMap.put("paths", null);
-            }
-
-        } else {
-            modelMap.put("paths", gifRepository.getGifs());
-        }
+        gifRepository.checkAndPutToMap(modelMap,q, gifRepository.getGifs());
         return "home";
     }
 }

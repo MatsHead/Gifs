@@ -1,6 +1,7 @@
 package pl.matshead.Gifs.SampleData;
 
 import org.springframework.stereotype.Component;
+import org.springframework.ui.ModelMap;
 import pl.matshead.Gifs.Category;
 import pl.matshead.Gifs.Gif;
 import pl.matshead.Gifs.repositories.GifRepository;
@@ -28,6 +29,23 @@ public class GifSampleData implements GifRepository {
                 filter(s->s.getFavorite()==true).
                 collect(Collectors.toCollection(ArrayList::new));
         return newGifList;
+    }
+
+    @Override
+    public ModelMap checkAndPutToMap(ModelMap map, String name, List<Gif> list) {
+        Gif gif = Gif.getGifByName(name, getGifs());
+        if (name != null && gif != null)  {
+            List<Gif> gifs = new ArrayList<>();
+            gifs.add(gif);
+            map.put("paths", gifs);
+        } else if (name != null && gif == null){
+            map.put("paths", null);
+        } else {
+            map.put("paths", list);
+        }
+
+
+        return null;
     }
 
     @Override
