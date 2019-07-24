@@ -16,7 +16,7 @@ public class GifController {
 
     @GetMapping("/gif/{name}")
     public String getGifDetails(@PathVariable String name, ModelMap map){
-        map.put("gif", new Gif(name, false, "2"));
+        map.put("gif", Gif.getGifByName(name, gifRepository.getGifs()));
         return "gif-details";
     }
 }

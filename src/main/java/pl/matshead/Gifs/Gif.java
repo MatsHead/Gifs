@@ -39,4 +39,13 @@ public class Gif {
         this.favorite = favorite;
     }
 
+    public static Gif getGifByName(String name, List<Gif> list){
+        for (Gif g : list) {
+            if (g.getName().equals(name)) {
+                return g;
+            }
+        }
+        return null;
+    }
+
 }
